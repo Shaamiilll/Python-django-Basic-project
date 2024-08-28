@@ -1,0 +1,13 @@
+{% extends "invAPP/layot.html" %}
+
+{% block title %} Delete Product {% endblock %} 
+
+{% block content %}
+<h1 class="text-center">Are you sure to delete this</h1>
+<form method="post" class="text-center">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Yes</button>
+    <a href="{% url 'product_list' %}" class="btn btn-secondary">Cancel</a>
+
+</form>
+{% endblock %}

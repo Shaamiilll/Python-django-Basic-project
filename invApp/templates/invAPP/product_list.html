@@ -1,0 +1,39 @@
+{% extends "invAPP/layot.html" %}
+
+{% block title %}List{% endblock %}
+
+
+{% block content %}
+<h1 class="text-center">Products</h1>
+<table class="table table-boredered table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Product Id</th>
+            <th>name</th>
+            <th>SKU</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Supplier</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.product_id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.sku }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>{{ product.supplier }}</td>
+            <td>
+
+                <a href="{% url 'product_update' product.product_id %}" class="btn btn-warning">Update</a>
+                <a href="{% url 'product_delete' product.product_id %}" class="btn btn-danger">Delete</a>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

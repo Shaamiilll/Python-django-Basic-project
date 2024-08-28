@@ -1,0 +1,13 @@
+{% extends "invAPP/layot.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to the invertory management system</h1>
+    <p class="lead">
+        manage your products efficently and effectively
+    </p>
+    <hr class="my-4">
+    <p>use the navigation bar to add , view , update or delete the products</p>
+    <a href="{% url 'product_list'%}" class="btn btn-primary btn-lg" role="button"> View Products</a>
+</div>
+{% endblock %}
